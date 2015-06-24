@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$if(lettre)$lettre$else$$documentclass$$endif$}
 $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
@@ -8,6 +8,18 @@ $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
 $endif$
+
+$if(lettre)$
+\usepackage{marginnote}
+\renewcommand*{\raggedleftmarginnote}{}
+\reversemarginpar
+
+\usepackage{savesym}
+\savesymbol{fax}
+\usepackage{marvosym}
+\restoresymbol{MARV}{fax}
+$endif$
+
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
@@ -188,7 +200,36 @@ $endif$
 $if(lof)$
 \listoffigures
 $endif$
+
+$if(lettre)$
+\begin{letter}{$for(lettre)$$lettre$\\ $endfor$}
+\pagestyle{plain}
+
+\name{$author$}
+\def\tellabelname{}
+\def\emaillabelname{}
+\nofax
+\address{$author$\\ [2mm]
+\marginnote{\Writinghand{}}$for(address)$$address$\\ $endfor$}
+$if(telephone)$
+\telephone{\marginnote{\Mobilefone{}}$telephone$}
+$else$ \notelephone $endif$
+$if(email)$
+\email{\marginnote{\Letter{}}\href{mailto:$email$}{$email$}}
+$endif$
+\lieu{$lieu$}
+\date{le $date$}
+% \addtolength{\letterwidth}{10pt}
+% \tension{-8}
+\opening{$opening$}
+$endif$
+
 $body$
+
+$if(lettre)$
+\closing{}
+\end{letter}
+$endif$
 
 $if(natbib)$
 $if(bibliography)$
