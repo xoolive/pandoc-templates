@@ -275,9 +275,12 @@ $endif$
 \date{le $date$}
 % \addtolength{\letterwidth}{10pt}
 % \tension{-8}
+<<<<<<< 5226292556205480462d611e371e643fcf899569
 $if(concerne)$
 \conc{$concerne$}
 $endif$
+=======
+>>>>>>> Template for lettre class
 \opening{$opening$}
 $endif$
 
