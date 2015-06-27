@@ -221,6 +221,9 @@ $endif$
 \date{le $date$}
 % \addtolength{\letterwidth}{10pt}
 % \tension{-8}
+$if(concerne)$
+\conc{$concerne$}
+$endif$
 \opening{$opening$}
 $endif$
 
