@@ -40,7 +40,7 @@ $if(mathfont)$
 $endif$
 $if(CJKmainfont)$
     \usepackage{xeCJK}
-    \setCJKmainfont{$CJKmainfont$}
+    \setCJKmainfont[$CJKoptions$]{$CJKmainfont$}
 $endif$
 \fi
 % use upquote if available, for straight quotes in verbatim environments
@@ -60,6 +60,7 @@ $endif$
 \else
   \usepackage[unicode=true]{hyperref}
 \fi
+\usepackage[usenames,dvipsnames]{color}
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={$author-meta$},
