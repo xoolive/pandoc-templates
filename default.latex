@@ -77,13 +77,14 @@ $endif$
 \fi
 }
 \makeatother
+\makeatletter
+\@ifpackageloaded{color}{}{%
+\usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
 \hypersetup{breaklinks=true,
             bookmarks=true,
-\usepackage{hyperref}
-$if(colorlinks)$
-\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
-$endif$
-\hypersetup{unicode=true,
+            pdfauthor={$author-meta$},
 $if(title-meta)$
             pdftitle={$title-meta$},
 $endif$
