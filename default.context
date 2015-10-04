@@ -2,8 +2,12 @@
   \enableregime[utf-8]  
   \setupcolors[state=start]
 \stopmode
-$if(mainlang)$
-\mainlanguage[$mainlang$]
+$if(context-lang)$
+\mainlanguage[$context-lang$]
+$endif$
+$if(context-dir)$
+\setupalign[$context-dir$]
+\setupdirections[bidi=on,method=two]
 $endif$
 
 % Enable hyperlinks
