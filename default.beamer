@@ -1,3 +1,4 @@
+<<<<<<< ade6bdf50e4acc3955ec9b7b4834310587b6cc53
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
@@ -42,6 +43,9 @@ $if(CJKmainfont)$
     \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
 $endif$
 \fi
+=======
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(handout)$handout,$endif$$if(beamer)$compress,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+>>>>>>> Make compatible with utopia theme
 $if(theme)$
 \usetheme{$theme$}
 $endif$
@@ -51,6 +55,7 @@ $endif$
 $if(fonttheme)$
 \usefonttheme{$fonttheme$}
 $endif$
+<<<<<<< ade6bdf50e4acc3955ec9b7b4834310587b6cc53
 $if(mainfont)$
 \usefonttheme{serif} % use mainfont rather than sansfont for slide text
 $endif$
@@ -60,6 +65,31 @@ $endif$
 $if(outertheme)$
 \useoutertheme{$outertheme$}
 $endif$
+=======
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{:}
+\setbeamercolor{caption name}{fg=normal text.fg}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifxetex
+  \usepackage{fontspec,xltxtra,xunicode}
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\else
+  \ifluatex
+    \usepackage{fontspec}
+    \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+    \newcommand{\euro}{€}
+  \else
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    $if(euro)$
+      \usepackage{eurosym}
+    $endif$
+  \fi
+\fi
+>>>>>>> Make compatible with utopia theme
 % use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 % use microtype if available
@@ -126,6 +156,7 @@ $if(graphics)$
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
 
+<<<<<<< ade6bdf50e4acc3955ec9b7b4834310587b6cc53
 % Prevent slide breaks in the middle of a paragraph:
 \widowpenalties 1 10000
 \raggedbottom
@@ -150,6 +181,25 @@ $if(section-titles)$
   \frame{\subsectionpage}
 }
 $endif$
+=======
+% Comment these out if you don't want a slide with just the
+% part/section/subsection/subsubsection title:
+%\AtBeginPart{
+%  \let\insertpartnumber\relax
+%  \let\partname\relax
+%  \frame{\partpage}
+%}
+%\AtBeginSection{
+%  \let\insertsectionnumber\relax
+%  \let\sectionname\relax
+%  \frame{\sectionpage}
+%}
+%\AtBeginSubsection{
+%  \let\insertsubsectionnumber\relax
+%  \let\subsectionname\relax
+%  \frame{\subsectionpage}
+%}
+>>>>>>> Make compatible with utopia theme
 
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
