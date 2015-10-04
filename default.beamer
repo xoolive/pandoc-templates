@@ -1,4 +1,4 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(handout)$handout,$endif$$if(beamer)$compress,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 $if(theme)$
 \usetheme{$theme$}
 $endif$
@@ -14,7 +14,6 @@ $endif$
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
 \usepackage{fixltx2e} % provides \textsubscript
-\usepackage{lmodern}
 \ifxetex
   \usepackage{fontspec,xltxtra,xunicode}
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
@@ -83,21 +82,21 @@ $endif$
 
 % Comment these out if you don't want a slide with just the
 % part/section/subsection/subsubsection title:
-\AtBeginPart{
-  \let\insertpartnumber\relax
-  \let\partname\relax
-  \frame{\partpage}
-}
-\AtBeginSection{
-  \let\insertsectionnumber\relax
-  \let\sectionname\relax
-  \frame{\sectionpage}
-}
-\AtBeginSubsection{
-  \let\insertsubsectionnumber\relax
-  \let\subsectionname\relax
-  \frame{\subsectionpage}
-}
+%\AtBeginPart{
+%  \let\insertpartnumber\relax
+%  \let\partname\relax
+%  \frame{\partpage}
+%}
+%\AtBeginSection{
+%  \let\insertsectionnumber\relax
+%  \let\sectionname\relax
+%  \frame{\sectionpage}
+%}
+%\AtBeginSubsection{
+%  \let\insertsubsectionnumber\relax
+%  \let\subsectionname\relax
+%  \frame{\subsectionpage}
+%}
 
 $if(strikeout)$
 \usepackage[normalem]{ulem}
@@ -142,7 +141,7 @@ $endif$
 
 \begin{document}
 $if(title)$
-\frame{\titlepage}
+\maketitle
 $endif$
 
 $for(include-before)$
