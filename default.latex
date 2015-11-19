@@ -104,11 +104,10 @@ $endif$
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 $if(lang)$
-\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
-$if(babel-newcommands)$
-  $babel-newcommands$
-$endif$
+\ifxetex
+  \usepackage{polyglossia}
+  \setmainlanguage[$if(polyglossia-variant)$variant=$polyglossia-variant$$endif$]{$polyglossia-lang$}
+  \setotherlanguages{$for(polyglossia-otherlangs)$$polyglossia-otherlangs$$sep$,$endfor$}
 \else
   \usepackage{polyglossia}
   \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
