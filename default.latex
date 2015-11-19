@@ -94,7 +94,7 @@ $endif$
 $if(lang)$
 \ifxetex
   \usepackage{polyglossia}
-  \setmainlanguage[variant=$polyglossia-variant$]{$polyglossia-lang$}
+  \setmainlanguage[$if(polyglossia-variant)$variant=$polyglossia-variant$$endif$]{$polyglossia-lang$}
   \setotherlanguages{$for(polyglossia-otherlangs)$$polyglossia-otherlangs$$sep$,$endfor$}
 \else
   \usepackage[shorthands=off,$babel-lang$]{babel}
