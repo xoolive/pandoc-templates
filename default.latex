@@ -84,9 +84,6 @@ $endif$
             bookmarks=true,
             pdfauthor={$author-meta$},
             pdftitle={$title-meta$},
-$if(subtitle)$
-            pdfsubject={$subtitle$},
-$endif$
 $if(keywords)$
             pdfkeywords={$for(keywords)$$keywords$$sep$; $endfor$},
 $endif$
