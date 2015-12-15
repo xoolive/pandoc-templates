@@ -129,26 +129,26 @@ $endif$
 \widowpenalties 1 10000
 \raggedbottom
 
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
-% \AtBeginPart{
-%   \let\insertpartnumber\relax
-%   \let\partname\relax
-%   \frame{\partpage}
-% }
-% \AtBeginSection{
-%   \ifbibliography
-%   \else
-%     \let\insertsectionnumber\relax
-%     \let\sectionname\relax
-%     \frame{\sectionpage}
-%   \fi
-% }
-% \AtBeginSubsection{
-%   \let\insertsubsectionnumber\relax
-%   \let\subsectionname\relax
-%   \frame{\subsectionpage}
-% }
+$if(section-titles)$
+\AtBeginPart{
+  \let\insertpartnumber\relax
+  \let\partname\relax
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \let\insertsectionnumber\relax
+    \let\sectionname\relax
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \let\insertsubsectionnumber\relax
+  \let\subsectionname\relax
+  \frame{\subsectionpage}
+}
+$endif$
 
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
