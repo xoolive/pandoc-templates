@@ -156,7 +156,6 @@ $if(graphics)$
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
 
-<<<<<<< ade6bdf50e4acc3955ec9b7b4834310587b6cc53
 % Prevent slide breaks in the middle of a paragraph:
 \widowpenalties 1 10000
 \raggedbottom
@@ -181,25 +180,6 @@ $if(section-titles)$
   \frame{\subsectionpage}
 }
 $endif$
-=======
-% Comment these out if you don't want a slide with just the
-% part/section/subsection/subsubsection title:
-%\AtBeginPart{
-%  \let\insertpartnumber\relax
-%  \let\partname\relax
-%  \frame{\partpage}
-%}
-%\AtBeginSection{
-%  \let\insertsectionnumber\relax
-%  \let\sectionname\relax
-%  \frame{\sectionpage}
-%}
-%\AtBeginSubsection{
-%  \let\insertsubsectionnumber\relax
-%  \let\subsectionname\relax
-%  \frame{\subsectionpage}
-%}
->>>>>>> Make compatible with utopia theme
 
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
