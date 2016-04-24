@@ -1,4 +1,3 @@
-<<<<<<< ade6bdf50e4acc3955ec9b7b4834310587b6cc53
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(handout)$handout,$endif$$if(beamer)$ignorenonframetext,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 \setbeamertemplate{caption}[numbered]
 \setbeamertemplate{caption label separator}{: }
@@ -43,9 +42,6 @@ $if(CJKmainfont)$
     \setCJKmainfont[$for(CJKoptions)$$CJKoptions$$sep$,$endfor$]{$CJKmainfont$}
 $endif$
 \fi
-=======
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(handout)$handout,$endif$$if(beamer)$compress,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
->>>>>>> Make compatible with utopia theme
 $if(theme)$
 \usetheme{$theme$}
 $endif$
@@ -55,7 +51,6 @@ $endif$
 $if(fonttheme)$
 \usefonttheme{$fonttheme$}
 $endif$
-<<<<<<< ade6bdf50e4acc3955ec9b7b4834310587b6cc53
 $if(mainfont)$
 \usefonttheme{serif} % use mainfont rather than sansfont for slide text
 $endif$
