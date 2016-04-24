@@ -66,30 +66,17 @@ $endif$
 $if(geometry)$
 \usepackage[$for(geometry)$$geometry$$sep$,$endfor$]{geometry}
 $endif$
-\makeatletter
-\@ifpackageloaded{hyperref}{}{%
-\ifxetex
-  \usepackage[setpagesize=false, % page size defined by xetex
-              unicode=false, % unicode breaks when used with xetex
-              xetex]{hyperref}
-\else
-  \usepackage[unicode=true]{hyperref}
-\fi
-}
-\makeatother
-\makeatletter
-\@ifpackageloaded{color}{}{%
-\usepackage[usenames,dvipsnames]{color}
-}
-\makeatother
-\hypersetup{breaklinks=true,
-            bookmarks=true,
-            pdfauthor={$author-meta$},
+\usepackage{hyperref}
+$if(colorlinks)$
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+$endif$
+\hypersetup{unicode=true,
 $if(title-meta)$
             pdftitle={$title-meta$},
 $endif$
 $if(author-meta)$
             pdfauthor={$author-meta$},
+$endif$
 $if(keywords)$
             pdfkeywords={$for(keywords)$$keywords$$sep$; $endfor$},
 $endif$
@@ -104,10 +91,11 @@ $endif$
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 $if(lang)$
-\ifxetex
-  \usepackage{polyglossia}
-  \setmainlanguage[$if(polyglossia-variant)$variant=$polyglossia-variant$$endif$]{$polyglossia-lang$}
-  \setotherlanguages{$for(polyglossia-otherlangs)$$polyglossia-otherlangs$$sep$,$endfor$}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
+$if(babel-newcommands)$
+  $babel-newcommands$
+$endif$
 \else
   \usepackage{polyglossia}
   \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
@@ -275,13 +263,12 @@ $endif$
 \date{le $date$}
 % \addtolength{\letterwidth}{10pt}
 % \tension{-8}
-<<<<<<< 5226292556205480462d611e371e643fcf899569
 $if(concerne)$
 \conc{$concerne$}
 $endif$
-=======
->>>>>>> Template for lettre class
+$if(opening)$
 \opening{$opening$}
+$endif$
 $endif$
 
 $body$
