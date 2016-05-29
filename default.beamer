@@ -155,26 +155,26 @@ $endif$
 \widowpenalties 1 10000
 \raggedbottom
 
-$if(section-titles)$
-\AtBeginPart{
-  \let\insertpartnumber\relax
-  \let\partname\relax
-  \frame{\partpage}
-}
-\AtBeginSection{
-  \ifbibliography
-  \else
-    \let\insertsectionnumber\relax
-    \let\sectionname\relax
-    \frame{\sectionpage}
-  \fi
-}
-\AtBeginSubsection{
-  \let\insertsubsectionnumber\relax
-  \let\subsectionname\relax
-  \frame{\subsectionpage}
-}
-$endif$
+% $if(section-titles)$
+% \AtBeginPart{
+%   \let\insertpartnumber\relax
+%   \let\partname\relax
+%   \frame{\partpage}
+% }
+% \AtBeginSection{
+%   \ifbibliography
+%   \else
+%     \let\insertsectionnumber\relax
+%     \let\sectionname\relax
+%     \frame{\sectionpage}
+%   \fi
+% }
+% \AtBeginSubsection{
+%   \let\insertsubsectionnumber\relax
+%   \let\subsectionname\relax
+%   \frame{\subsectionpage}
+% }
+% $endif$
 
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
